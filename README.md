@@ -1,1 +1,3 @@
-# python_django_library_example
+# Python Django Library Example Project
+
+Library website project written in Django 3.0
