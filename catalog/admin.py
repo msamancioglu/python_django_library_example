@@ -9,6 +9,7 @@ from .models import Book, Author, Genre, BookInstance, Language
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ('last_name', 'first_name', 'date_of_birth', 'date_of_death')
     list_filter = ('last_name', 'first_name')
+    fields = ['first_name', 'last_name', ('date_of_birth','date_of_death')]
 
 
 # Register the admin class with the associated model
