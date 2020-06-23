@@ -27,6 +27,7 @@ admin.site.register(Language)
 # Register the Admin classes for Book using the decorator
 class BooksInstanceInline(admin.TabularInline):
     model = BookInstance
+    extra = 0
 
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
@@ -38,6 +39,7 @@ class BookAdmin(admin.ModelAdmin):
 @admin.register(BookInstance)
 class BookInstanceAdmin(admin.ModelAdmin):
     list_filter = ('status', 'due_back')
+    list_display = ('id','book', 'status', 'due_back' )
     fieldsets = (
         ('Book Details', {
             'fields': ('book', 'imprint', 'id')
