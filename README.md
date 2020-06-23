@@ -9,3 +9,5 @@ Credits : Please refer to Django Web Framework (Python) online Guide of MDN
           for project details.
 
 Merged with sub-branch
+
+Add some more lines
