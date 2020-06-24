@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+import os
 #import models
 from .models import Book, Author, BookInstance, Genre, Language
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Create your views here.
 
 def index(request):
@@ -22,6 +23,7 @@ def index(request):
     num_authors = Author.objects.count()
 
     context = {
+        'pat':os.path.join(BASE_DIR, 'templates'),
         'num_books' : num_books,
         'num_instances' : num_instances,
         'num_instances_available' : num_available_instances,
