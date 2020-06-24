@@ -3,6 +3,16 @@ from django.http import HttpResponse
 import os
 #import models
 from .models import Book, Author, BookInstance, Genre, Language
+from django.views import generic
+
+class BookListView(generic.ListView):
+    model = Book
+    paginate_by = 2
+
+class BookDetailView(generic.DetailView):
+    model = Book
+    #paginate_by = 10
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Create your views here.
