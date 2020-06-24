@@ -1,9 +1,7 @@
 {% extends "base_generic.html" %}
 
 
-{% block sidebar %}
-    <h1>Sidebar</h1>
-{% endblock %}
+
 
 {% block content %}
 <h1>Local Library Home</h1>
@@ -14,7 +12,6 @@
 
 <p>The library has the following record counts:</p>
 
-<h1> author name : {{ author }}</h1>
 <ul>
 <li><strong>Books:</strong> {{ num_books }}</li>
 <li><strong>Copies:</strong> {{ num_instances }}</li>
