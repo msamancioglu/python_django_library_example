@@ -1,5 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.contrib.auth.models import User, Group
+from rest_framework import viewsets
+from .serializers import UserSerializer, GroupSerializer
+
 import os
 #import models
 from .models import Book, Author, BookInstance, Genre, Language
@@ -13,6 +17,14 @@ class BookDetailView(generic.DetailView):
     model = Book
     #paginate_by = 10
 
+
+class AuthorListView(generic.ListView):
+    model = Author
+    paginate_by = 2
+
+class AuthorDetailView(generic.DetailView):
+    model = Author
+    #paginate_by = 10
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Create your views here.
@@ -46,4 +58,3 @@ def index(request):
         'num_visits': num_visits,
     }
     return render(request, 'index.html', context)
-
