@@ -32,6 +32,10 @@ def index(request):
     #'all( )' is implied   ?
     num_authors = Author.objects.count()
 
+    # Number of visits to this view, as counted in the session variable.
+    num_visits = request.session.get('num_visits', 0)
+    request.session['num_visits'] = num_visits + 1
+
     context = {
         'pat':os.path.join(BASE_DIR, 'templates'),
         'num_books' : num_books,
@@ -39,6 +43,7 @@ def index(request):
         'num_instances_available' : num_available_instances,
         'num_authors' : num_authors,
         'author' : 'mustafa',
+        'num_visits': num_visits,
     }
     return render(request, 'index.html', context)
 
