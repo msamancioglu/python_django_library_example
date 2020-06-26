@@ -19,6 +19,7 @@ copy.status == 'm' %}text-danger{% else %}text-warning{% endif %}">
 <p><strong>Due to be returned:</strong> {{ copy.due_back }}</p>
 {% endif %}
 <p><strong>Imprint:</strong> {{ copy.imprint }}</p>
+    <p><strong>Borrower:</strong> {{ copy.borrower }}</p>
 <p class="text-muted"><strong>Id:</strong> {{ copy.id }}</p>
 {% endfor %}
 </div>
